@@ -11,8 +11,10 @@
 
 2. access_token在有效期内返回相同token，多人返回相同access_token
 
-3.获取UserId时，接口返回数据如下，部分字段首字母为大写会导致转换实体类失败，需处理。
-```json
+3. code参数仅能使用一次，再使用需重新获取。
+
+4.获取UserId时，接口返回数据如下，部分字段首字母为大写会导致转换实体类失败，需处理。
+```
   {
      "errcode": 0,
       "errmsg": "ok",
@@ -34,3 +36,9 @@ response_type|true|固定为code,跳转成功后访问链接中会带有code参�
 scope|true|应用授权作用域。企业自建应用固定填写：snsapi_base
 state|false|重定向后会带上state参数.可以填写a-zA-Z0-9的参数值，长度不可超过128个字节
 #wechat_redirect|是|判断是否需要带上身份信息
+
+> 常见错误值
+1. `40029`：参数code已使用过,需重新获取
+
+2. `41001`: 缺少access_token参数。一般是请求方法的问题，需保证是拼接在url中
+
