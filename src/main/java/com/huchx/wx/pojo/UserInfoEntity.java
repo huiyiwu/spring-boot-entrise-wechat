@@ -1,9 +1,10 @@
 package com.huchx.wx.pojo;
 
+import java.io.Serializable;
 import java.sql.Array;
 import java.util.List;
 
-public class UserInfoEntity {
+public class UserInfoEntity implements Serializable {
     private int errcode;
     private String errmsg;
     private String userid;

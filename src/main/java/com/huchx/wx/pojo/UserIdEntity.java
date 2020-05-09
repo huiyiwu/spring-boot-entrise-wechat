@@ -1,10 +1,18 @@
 package com.huchx.wx.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class UserIdEntity {
     private int errcode;
     private String errmsg;
-    private String UserId;
-    private String DeviceId;
+//    @JsonProperty("UserId")
+    private String userId;
+//    @JsonProperty("DeviceId")
+    private String deviceId;
+    @JsonIgnore
+//    @JsonProperty("OpenId")
+    private String openId;
 
     public int getErrcode() {
         return errcode;
@@ -23,18 +31,26 @@ public class UserIdEntity {
     }
 
     public String getUserId() {
-        return UserId;
+        return userId;
     }
 
     public void setUserId(String userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public String getDeviceId() {
-        return DeviceId;
+        return deviceId;
     }
 
     public void setDeviceId(String deviceId) {
-        DeviceId = deviceId;
+        this.deviceId = deviceId;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 }

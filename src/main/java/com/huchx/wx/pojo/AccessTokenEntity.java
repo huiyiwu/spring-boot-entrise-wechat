@@ -1,6 +1,9 @@
 package com.huchx.wx.pojo;
 
-public class AccessTokenEntity {
+import java.io.Serializable;
+
+public class AccessTokenEntity implements Serializable {
+
     private int errcode;
     private String errmsg;
     private String access_token;
